@@ -6,8 +6,9 @@ import org.openqa.selenium.WebElement
 
 class CSPWaitForElementNotPresent{
   public void run (def params){
-    
-    int count = params."Timeout In Seconds".toInteger()
+   Browser.Driver.manage().timeouts().implicitlyWait(0, java.util.concurrent.TimeUnit.SECONDS)
+
+   int count = params."Timeout In Seconds".toInteger()
     while(count >= 0){
       def elements = Elements.findAll(params,Browser.Driver)
       if(elements.size() == 0) break
@@ -17,6 +18,6 @@ class CSPWaitForElementNotPresent{
     //if(count > 0){
      // assert false,"Element was found in ${params."Timeout In Seconds"} seconds."
     //}
-
-  }
+   Browser.Driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS)
+}
 }
