@@ -43,6 +43,7 @@ class Browser{
       service = new ChromeDriverService.Builder().usingPort(9518).usingDriverExecutable(new File("chromedriver.exe")).build()
       service.start()
       Driver = new RemoteWebDriver(service.getUrl(),DesiredCapabilities.chrome())
+
     }
     else{
       def serviceIE = new InternetExplorerDriverService.Builder().usingPort(9516).usingDriverExecutable(new File("MicrosoftWebDriver.exe")).build()

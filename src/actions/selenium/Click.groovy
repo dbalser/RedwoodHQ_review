@@ -11,7 +11,7 @@ class Click{
     WebElement element = Elements.find(params,Browser.Driver)
     //try catch is a workaround for a webdriver bug where element exists and visible but
     //webdriver is unable to click it
-    int iTimeout = 20
+    int iTimeout = 120  //Change by Frank Watts
     while(iTimeout > 0)
     try{
       element.click()
