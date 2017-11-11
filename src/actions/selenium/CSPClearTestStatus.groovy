@@ -13,6 +13,7 @@ class CSPClearTestStatus{
                 file.delete();
             }
         }
-    
+		File ldd = new File(basePath + '//' + 'lastDependencyDate' )
+        ldd.text = "0"   
     }
 }

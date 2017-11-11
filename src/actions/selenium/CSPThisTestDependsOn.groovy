@@ -5,7 +5,7 @@ import groovy.time.*
 
 class CSPThisTestDependsOn{
 //    static public long lastDependencyDate = System.currentTimeMillis(); //
-    static public long lastDependencyDate = 0; //
+//    static public long lastDependencyDate = 0; //
 
     public void run(def params){
         def testNameArray = params."TestName"
@@ -15,6 +15,7 @@ class CSPThisTestDependsOn{
         def thisTestCase = redwood.launcher.Launcher.globals.get("testcaseName")
         def tempDir = System.getenv("TEMP")
         def basePath = tempDir + "//CSPAutomation"
+		File ldd = new File(basePath + '//' + 'lastDependencyDate' )
                 
         while (true) {
             def allPassed = true
@@ -30,9 +31,10 @@ class CSPThisTestDependsOn{
                 }
             }
 			long now = System.currentTimeMillis()
+	    	long lastDependencyDate = Long.parseLong(ldd.text)
 			long timeSinceLastDependency = (now - lastDependencyDate )/1000
-            if ((timeSinceLastDependency >= 60) && allPassed) { //allow no more than one test per 60 seconds to launch
-				lastDependencyDate = now
+            if ((timeSinceLastDependency >= 120) && allPassed) { //allow no more than one test per 60 seconds to launch
+                ldd.text = now   
                 return
             }
             def myRand = Math.abs(new Random().nextInt() % 999) + 1
