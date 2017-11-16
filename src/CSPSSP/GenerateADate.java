@@ -8,7 +8,7 @@ class GenerateADate{
         String date = null;
         if(params.get("DateType").toString().equals("CreatedDate"))
         {
-         SimpleDateFormat CreatedDate = new SimpleDateFormat("M/d/yyyy");
+         SimpleDateFormat CreatedDate = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
 		Calendar c = Calendar.getInstance();
 		c.setTime(new Date()); // Now use today date.
         c.add(Calendar.DATE, Integer.parseInt(params.get("AddDays").toString()));
