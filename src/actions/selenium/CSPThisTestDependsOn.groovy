@@ -4,11 +4,10 @@ import redwood.launcher.*
 import groovy.time.*
 
 class CSPThisTestDependsOn{
-//    static public long lastDependencyDate = System.currentTimeMillis(); //
-//    static public long lastDependencyDate = 0; //
-
     public void run(def params){
         def testNameArray = params."TestName"
+        System.out.println("Starting 'ThisTestDependsOn'")
+
         if (testNameArray.isEmpty()) {
             return
         } 
@@ -16,6 +15,7 @@ class CSPThisTestDependsOn{
         def tempDir = System.getenv("TEMP")
         def basePath = tempDir + "//CSPAutomation"
 		File ldd = new File(basePath + '//' + 'lastDependencyDate' )
+		File led = new File(basePath + '//' + 'lastEndDate' )
                 
         while (true) {
             def allPassed = true
@@ -30,15 +30,29 @@ class CSPThisTestDependsOn{
                     allPassed = false
                 }
             }
-			long now = System.currentTimeMillis()
-	    	long lastDependencyDate = Long.parseLong(ldd.text)
+
+            long now = System.currentTimeMillis()
+	    	long lastDependencyDate = Long.parseLong("0"+ldd.text)
+            System.out.println("ldd=" + lastDependencyDate + " now=" + now)
+	    	long lastEndDate = Long.parseLong("0"+led.text)
+            System.out.println("led=" + lastEndDate + " now=" + now)
+
 			long timeSinceLastDependency = (now - lastDependencyDate )/1000
-            if ((timeSinceLastDependency >= 120) && allPassed) { //allow no more than one test per 60 seconds to launch
+			long timeSinceLastEnd = (now - lastEndDate )/1000
+            def endInterval = 40
+			def interval = 120
+            if (thisTestCase == 'MT_REG_01_Ming.le_ManualProvisioning'){
+                interval = 70;
+            }
+            if ((timeSinceLastDependency >= interval) &&
+                (timeSinceLastEnd >= endInterval) &&
+                allPassed) { //allow no more than one test per 60 seconds to launch
                 ldd.text = now   
                 return
             }
+
             def myRand = Math.abs(new Random().nextInt() % 999) + 1
-            sleep(15000 + myRand) 
+            sleep(12000 + myRand) 
         }
     }
 }

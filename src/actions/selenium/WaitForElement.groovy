@@ -14,9 +14,9 @@ class WaitForElement{
       sleep(1000)
       count--
     }
-    //if(count <= 0){
-      //assert false,"Element was not found in ${params."Timeout In Seconds"} seconds."
-    //}
+    if(count <= 0){
+      assert false,"Element was not found in ${params."Timeout In Seconds"} seconds."
+    }
 
   }
 }

@@ -2,7 +2,8 @@ package actions.selenium;
 
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.ie.InternetExplorerDriver
-import org.openqa.selenium.firefox.FirefoxDriver
+//import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.firefox.*
 import org.openqa.selenium.ie.InternetExplorerDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
@@ -34,7 +35,11 @@ class Browser{
       else{
 		System.setProperty("webdriver.gecko.driver", "geckodriver.exe")
       }
+//      ProfilesIni profile = new ProfilesIni();
 
+//      FirefoxProfile myprofile = profile.getProfile("RedwoodHQFireFoxProfile");
+
+//      Driver = new FirefoxDriver(myprofile)
       Driver = new FirefoxDriver()
     }
     else if (params."Browser Type" == "Chrome"){

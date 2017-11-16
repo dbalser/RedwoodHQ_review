@@ -11,10 +11,10 @@ class CSPWaitForElement{
     while(count >= 0){
       def elements = Elements.findAll(params,Browser.Driver)
       if(elements.size() > 0) {
-         if(elements[0].isDisplayed() &&
-            elements[0].isEnabled() &&
-			(count > 2) &&
-            !(elements[0].getAttribute('class').contains('disabled'))    ) break
+          if(elements[0].isDisplayed() &&
+             elements[0].isEnabled() &&
+             !(elements[0].getAttribute('class').contains('disabled'))    ) break
+          if (count <= 1) break
       }
       sleep(1000)
       count--

@@ -15,5 +15,7 @@ class CSPClearTestStatus{
         }
 		File ldd = new File(basePath + '//' + 'lastDependencyDate' )
         ldd.text = "0"   
+		File led = new File(basePath + '//' + 'lastEndDate' )
+        led.text = "0"   
     }
 }

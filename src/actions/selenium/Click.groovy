@@ -19,7 +19,8 @@ class Click{
     }
     catch(org.openqa.selenium.WebDriverException err){
       iTimeout--
-      if(err.message.contains("Element is not clickable at point")){
+      if (err.message.contains("Element is not clickable at point") ||
+     	  err.message.contains("mg-busy-wait")){
         if(iTimeout == 0){
           throw err
         }

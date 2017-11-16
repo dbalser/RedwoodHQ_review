@@ -9,8 +9,17 @@ class CSPSetPassFail{
 		def successPath = basePath + '//PASSED//' + thisTestCase
 		def failPath = basePath + '//FAILED//' + thisTestCase
 
-        System.out.println(successPath)
-        System.out.println(new File(successPath).isDirectory())
+        long now = System.currentTimeMillis()
+        File led = new File(basePath + '//' + 'lastEndDate' )
+        led.text = now
+        System.out.println("Set Pass Fail" + " now=" + now)
+//look into invoking SetPassFail before closing browser.
+//        long lastDependencyDate = Long.parseLong(ldd.text)
+//        def endInterval = 15
+
+
+//        System.out.println(successPath)
+//        System.out.println(new File(successPath).isDirectory())
         if (new File(successPath).isDirectory()) {
            return 
         }

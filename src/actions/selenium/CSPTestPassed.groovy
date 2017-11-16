@@ -7,6 +7,8 @@ class CSPTestPassed{
 		def tempDir = System.getenv("TEMP")
         def basePath = tempDir + "//CSPAutomation"
 		def thisPath = basePath + '//PASSED//' + thisTestCase
-        new File(thisPath).mkdirs()   
+        new File(thisPath).mkdirs()
+        long now = System.currentTimeMillis()
+        System.out.println("Test Passed" + " now=" + now)
     }
 }
