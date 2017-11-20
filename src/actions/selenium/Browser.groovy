@@ -72,6 +72,7 @@ class Browser{
     }
     Driver.manage().window().maximize()
     Driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS)
+    Driver.manage().timeouts().implicitlyWait(0, java.util.concurrent.TimeUnit.SECONDS) //fwatts
     MainWinHandle = Driver.getWindowHandle()   
     
   }
