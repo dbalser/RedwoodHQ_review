@@ -30,13 +30,15 @@ class Click{
      	  err.message.contains("no such element") || //This may overcome refresh issues on mongoose autorefresh screens
           err.message.contains("element not visible")){
           if(msTimeout <= 0){
+		  long endTime = System.currentTimeMillis()
           System.out.println("OutTicks=" + (endTime % 100000)/1000 )
           System.out.println("====>Duration ="+ (endTime - startTime)/1000); System.out.println(" ")
           throw err
         }
       }
       else{
-        System.out.println("OutTicks=" + (endTime % 100000)/1000 )
+    	long endTime = System.currentTimeMillis()
+	    System.out.println("OutTicks=" + (endTime % 100000)/1000 )
         System.out.println("====>Duration ="+ (endTime - startTime)/1000); System.out.println(" ")
         throw err
       }

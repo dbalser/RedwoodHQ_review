@@ -2,6 +2,7 @@ package CSPSSP;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.*;
+import java.util.TimeZone;
 
 class GenerateADate{
     public String run(HashMap<String, Object> params){
@@ -13,6 +14,25 @@ class GenerateADate{
 		c.setTime(new Date()); // Now use today date.
         c.add(Calendar.DATE, Integer.parseInt(params.get("AddDays").toString()));
 		date = CreatedDate.format(c.getTime());
+        }
+        else if(params.get("DateType").toString().equals("CurrentHour"))
+        {
+         	TimeZone tz = java.util.TimeZone.getTimeZone("GMT+0");
+			java.util.Calendar c = java.util.Calendar.getInstance(tz);
+
+		 	date=Integer.toString(c.get(java.util.Calendar.HOUR_OF_DAY));
+        }
+        else if(params.get("DateType").toString().equals("CurrentMinute"))
+        {
+         	TimeZone tz = java.util.TimeZone.getTimeZone("GMT+0");
+			java.util.Calendar c = java.util.Calendar.getInstance(tz);
+			int mm=c.get(java.util.Calendar.MINUTE);
+            if(mm>=55)
+                date="00";
+            else if(mm+5<10)
+                date='0'+Integer.toString(mm+5);
+            else
+            	date = Integer.toString(mm+5);
         }
         else if(params.get("DateType").toString().equals("ScheduledDate"))
         {
