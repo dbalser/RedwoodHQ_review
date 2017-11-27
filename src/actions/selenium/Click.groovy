@@ -9,13 +9,13 @@ class Click{
   public void run(def params){
 	long startTime = System.currentTimeMillis()
   	System.out.println("InTicks=" + (startTime % 100000)/1000 )
-    WebElement element = Elements.find(params,Browser.Driver)
-    //try catch is a workaround for a webdriver bug where element exists and visible but
-    //webdriver is unable to click it
     int msTimeout = 30 * 1000  //Change by Frank Watts
     int msCountPerLoop = 100 //ms of time per loop
+    //try catch is a workaround for a webdriver bug where element exists and visible but
+    //webdriver is unable to click it
     while(msTimeout > 0)
     try{
+	  WebElement element = Elements.find(params,Browser.Driver)
       element.click()
 	  long endTime = System.currentTimeMillis()
       System.out.println("OutTicks=" + (endTime % 100000)/1000 )

@@ -6,14 +6,21 @@ import org.openqa.selenium.WebElement
 
 class WaitForElement{
   public void run (def params){
-  long startTime = System.currentTimeMillis()
-  System.out.println("InTicks=" + (startTime % 100000)/1000 )
+    long startTime = System.currentTimeMillis()
+    System.out.println("InTicks=" + (startTime % 100000)/1000 )
     
     int msCount = params."Timeout In Seconds".toInteger() * 1000
+    def thisID = params."ID"
+    System.out.println("Wait for element="+thisID)
+    
 	def failCount = 0;
     while(msCount >= 0){
       try {
           def elements = Elements.findAll(params,Browser.Driver)
+          if(elements.size() > 1) {
+            System.out.println("Warning.  Multiple elements found.  Find a better locator." )      
+            System.out.println("Warning.  "+ elements.size() +" elements found." )      
+          }
           if(elements.size() > 0) break
       }
       catch(org.openqa.selenium.WebDriverException err){
@@ -30,7 +37,7 @@ class WaitForElement{
         }
       }
       
-        sleep(100)
+      sleep(100)
       msCount = msCount - 100
     }
     if(msCount <= 0){
