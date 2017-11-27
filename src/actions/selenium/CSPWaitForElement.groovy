@@ -16,8 +16,8 @@ class CSPWaitForElement{
       def elements = Elements.findAll(params,Browser.Driver)
       System.out.println("Inside WFE Loop msCount=" + msCount)
       System.out.println("Inner ticks=" + (System.currentTimeMillis() % 100000)/1000 )
-      System.out.println("el[0]=" + elements[0] + " el[0].id=" + elements[0].isDisplayed() + " el[0].ie=" + elements[0].isEnabled() + " el[0].class=" + elements[0].getAttribute('class') )
       if(elements.size() > 0) {
+	      System.out.println("el[0]=" + elements[0] + " el[0].id=" + elements[0].isDisplayed() + " el[0].ie=" + elements[0].isEnabled() + " el[0].class=" + elements[0].getAttribute('class') )
           if(elements[0].isDisplayed() &&
              elements[0].isEnabled() &&
              !(elements[0].getAttribute('class').contains('disabled'))    ) break

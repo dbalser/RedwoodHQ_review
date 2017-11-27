@@ -36,7 +36,7 @@ class Click{
           throw err
         }
       }
-      else{
+        else{
     	long endTime = System.currentTimeMillis()
 	    System.out.println("OutTicks=" + (endTime % 100000)/1000 )
         System.out.println("====>Duration ="+ (endTime - startTime)/1000); System.out.println(" ")
