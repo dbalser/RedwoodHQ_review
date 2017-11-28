@@ -29,12 +29,15 @@ class WaitForElement{
         if (!(err.message.contains("mg-busy-wait") || //This may overcome refresh issues on mongoose autorefresh screens
      	  err.message.contains("no such session") || 
           err.message.contains("element not visible")) ||
-          (failCount > 10)){
-		    long endTime = System.currentTimeMillis()
+          (failCount > 100)){
+            long endTime = System.currentTimeMillis()
             System.out.println("OutTicks=" + (endTime % 100000)/1000 )
             System.out.println("====>Duration ="+ (endTime - startTime)/1000); System.out.println(" ")
             throw err
         }
+        sleep(1000) //after an exception, sleep longer
+        msCount = msCount - 1000
+        
       }
       
       sleep(100)

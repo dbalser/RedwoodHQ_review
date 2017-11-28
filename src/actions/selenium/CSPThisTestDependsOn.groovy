@@ -37,10 +37,10 @@ class CSPThisTestDependsOn{
 
 			long timeSinceLastDependency = (now - lastDependencyDate )/1000
 			long timeSinceLastEnd = (now - lastEndDate )/1000
-            def endInterval = 90
-			def interval = 250
+            def endInterval = 30
+			def interval = 60
             if (thisTestCase == 'MT_REG_01_Ming.le_ManualProvisioning'){
-                interval = 40;
+                interval = 20;
             }
             if ((timeSinceLastDependency >= interval) &&
                 (timeSinceLastEnd >= endInterval) &&
