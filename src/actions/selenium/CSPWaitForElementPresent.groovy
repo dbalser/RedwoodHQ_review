@@ -27,7 +27,7 @@ class CSPWaitForElementPresent{
 		  break
         }
       }
-        catch(org.openqa.selenium.WebDriverException err){
+      catch(org.openqa.selenium.WebDriverException err){
 		failCount += 1;
         System.out.println("++++>Caught Exception =" + err.message); 
         if (!(err.message.contains("mg-busy-wait") || //This may overcome refresh issues on mongoose autorefresh screens
@@ -39,13 +39,10 @@ class CSPWaitForElementPresent{
             System.out.println("====>Duration ="+ (endTime - startTime)/1000); System.out.println(" ")
             throw err
         }
-      sleep(1000) //after an exception, sleep longer
-      msCount = msCount - 1000
-      }
-      
-         
-      sleep(100)
-        
+        sleep(1000) //after an exception, sleep longer
+        msCount = msCount - 1000
+      }               
+      sleep(100)        
       msCount = msCount - 100
     }
     if(msCount <= 0){

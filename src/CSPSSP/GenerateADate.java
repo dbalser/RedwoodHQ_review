@@ -34,14 +34,16 @@ class GenerateADate{
             else
             	date = Integer.toString(mm+5);
         }
-        else if(params.get("DateType").toString().equals("RequiredScheduledDate"))
+        else if(params.get("DateType").toString().equals("LastScheduleTime"))
         {
-        SimpleDateFormat scheduledDate = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
-		Calendar c = Calendar.getInstance();
-       
-		c.setTime(new Date()); // Now use today date.
-		c.add(Calendar.MINUTE, Integer.parseInt(params.get("AddMinutes").toString())); // Adding the number of days passed
-		date = scheduledDate.format(c.getTime());
+        	SimpleDateFormat CreatedDate = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
+			Calendar c = Calendar.getInstance();
+			try{
+                c.setTime((Date)CreatedDate.parse(params.get("ScheduledTime").toString())); // Now use today date.
+                c.add(Calendar.MINUTE, Integer.parseInt(params.get("AddMinutes").toString()));
+                date = CreatedDate.format(c.getTime());
+            }
+            catch(Exception e){}
         }
         else if(params.get("DateType").toString().equals("ScheduledDate"))
         {
