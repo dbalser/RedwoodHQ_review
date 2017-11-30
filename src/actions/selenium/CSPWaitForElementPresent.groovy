@@ -28,7 +28,7 @@ class CSPWaitForElementPresent{
         }
       }
       catch(org.openqa.selenium.WebDriverException err){
-		failCount += 1;
+          failCount += 1;
         System.out.println("++++>Caught Exception =" + err.message); 
         if (!(err.message.contains("mg-busy-wait") || //This may overcome refresh issues on mongoose autorefresh screens
      	  err.message.contains("no such session") || //This is the important one to catch
