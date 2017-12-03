@@ -11,6 +11,7 @@ class SwitchToFrame{
     else if(params.Index){
       Browser.Driver.switchTo().frame(params.Index.toInteger())
     }
+    else{}
     
   }
 }

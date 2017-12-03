@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 
 class SendNotification{
-    public void run(HashMap<String, Object> params){
+    public void run(HashMap<String, Object> params) throws Exception{
         WebElement sendNow=null,sendAt=null,date=null,hour=null,min=null,timezone=null,btnSchedule=null,btnYes=null,btnOk=null;
         WebElement hourDropdown=null,minuteDropdown=null,timeZoneDropdown=null;
         
@@ -23,25 +23,26 @@ class SendNotification{
             sendAt=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnOption']/../span"));
             sendAt.click();
             
-            date=Browser.Driver.findElement(By.xpath(""));
-            date.sendKeys(params.get("Date").toString());
+            date=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnDate']"));
+            date.sendKeys(params.get("RequiredDate").toString());
             
             hourDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeHr']/../../div[2]"));
             hourDropdown.click();
+            Thread.sleep(3000);
             
-            hour=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeHr']//td[contains(text(),'"+params.get("Hour").toString()+"')]"));
+            hour=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeHr']//td[contains(text(),'"+params.get("RequiredHour").toString()+"')]"));
             hour.click();
             
             minuteDropdown=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeMin']/div/div/div[2]"));
             minuteDropdown.click();
             
-            min=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeMin']//td[contains(text(),'"+params.get("Minute").toString()+"')]"));
+            min=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeMin']//td[contains(text(),'"+params.get("RequiredMinute").toString()+"')]"));
             min.click();
             
             timeZoneDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeZoneName']/../../div[2]"));
             timeZoneDropdown.click();
                 
-            timezone=Browser.Driver.findElement(By.xpath("//td[contains(text(),'"+params.get("TimeZone").toString()+"')]"));
+            timezone=Browser.Driver.findElement(By.xpath("//td[contains(text(),'"+params.get("RequiredTimeZone").toString()+"')]"));
             timezone.click();
             
             
