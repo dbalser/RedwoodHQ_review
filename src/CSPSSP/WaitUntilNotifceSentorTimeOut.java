@@ -14,7 +14,7 @@ class WaitUntilNotifceSentorTimeOut {
 	
 		long seconds = 0;
 		long minutes = 0;
-		long maxSeconds = 300;
+		long maxSeconds = 20;
 		String status;
 		String sentAt;
 
@@ -22,6 +22,7 @@ class WaitUntilNotifceSentorTimeOut {
 		String[]name = notificationName.split("@");
 		String notificationDate = name[1];
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
+		SimpleDateFormat cspUIDateFormat = new SimpleDateFormat("MM/DD/YYYY HH:mm:SS aa"); //12/5/2017 6:37:06 AM
 //		Date scheduledTime = sdf.parse(notificationDate);
 		long scheduledTime = sdf.parse(notificationDate).getTime()/1000;
 		long lastPermissibleSendTime = scheduledTime + maxSeconds;
@@ -38,7 +39,7 @@ System.out.println("notificationDate=" + notificationDate);
 
 		while (true) {
 			//String scheduledTime;
-			long timeNow = System.currentTimeMillis() % 1000;
+			long timeNow = System.currentTimeMillis() / 1000;
 System.out.println("timeNow =" + timeNow);
 			status = Browser.Driver.findElement(By.xpath("//div[@data-mgcompnamevalue='StatusGridCol']")).getText();
 System.out.println("status=" + status);
@@ -71,7 +72,7 @@ System.out.println("InsideCompleted");
 			"//td[@data-mgcompname='UpdatedBycol']/following-sibling::td[@data-mgcompname='SentAtGridCol']/div")).getText();
 System.out.println("sentAt=" + sentAt);
 //				Date sentDate = sdf.parse(sentAt);
-				long sentTime = sdf.parse(sentAt).getTime()/1000 - offsetInSeconds;
+				long sentTime = cspUIDateFormat.parse(sentAt).getTime()/1000 - offsetInSeconds;
 System.out.println("sendTime="+sentTime);
 
 				if (sentTime > lastPermissibleSendTime) {
