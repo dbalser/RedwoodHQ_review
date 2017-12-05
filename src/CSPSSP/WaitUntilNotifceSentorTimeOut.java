@@ -19,8 +19,8 @@ class WaitUntilNotifceSentorTimeOut {
 		String sentAt;
 
 		String notificationName = Browser.Driver.findElement(By.xpath("//div[@data-mgcompnamevalue='NameGridCol']")).getText();
-		String[]name = notificationName.split("-");
-		String notificationDate = name[9];
+		String[]name = notificationName.split("@");
+		String notificationDate = name[1];
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
 //		Date scheduledTime = sdf.parse(notificationDate);
 		long scheduledTime = sdf.parse(notificationDate).getTime()/1000;
