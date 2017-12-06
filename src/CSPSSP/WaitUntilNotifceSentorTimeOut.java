@@ -14,15 +14,15 @@ class WaitUntilNotifceSentorTimeOut {
 	
 		long seconds = 0;
 		long minutes = 0;
-		long maxSeconds = 20;
+		long maxSeconds = 300;
 		String status;
 		String sentAt;
 
 		String notificationName = Browser.Driver.findElement(By.xpath("//div[@data-mgcompnamevalue='NameGridCol']")).getText();
 		String[]name = notificationName.split("@");
 		String notificationDate = name[1];
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
-		SimpleDateFormat cspUIDateFormat = new SimpleDateFormat("MM/DD/YYYY HH:mm:SS aa"); //12/5/2017 6:37:06 AM
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d-HH:m:s");
+		SimpleDateFormat cspUIDateFormat = new SimpleDateFormat("M/d/yyyy h:m:s aa"); //12/5/2017 6:37:06 AM
 //		Date scheduledTime = sdf.parse(notificationDate);
 		long scheduledTime = sdf.parse(notificationDate).getTime()/1000;
 		long lastPermissibleSendTime = scheduledTime + maxSeconds;
@@ -30,6 +30,7 @@ class WaitUntilNotifceSentorTimeOut {
 		TimeZone tz = TimeZone.getDefault();  
 		Calendar cal = GregorianCalendar.getInstance(tz);
 		int offsetInSeconds = tz.getOffset(cal.getTimeInMillis()) / 1000;
+System.out.println("notificationName=" + notificationName);
 System.out.println("offsetInSeconds=" + offsetInSeconds);
 System.out.println("lastPermissibleSendTime=" + lastPermissibleSendTime);
 System.out.println("scheduledTime=" + scheduledTime);
@@ -72,11 +73,12 @@ System.out.println("InsideCompleted");
 			"//td[@data-mgcompname='UpdatedBycol']/following-sibling::td[@data-mgcompname='SentAtGridCol']/div")).getText();
 System.out.println("sentAt=" + sentAt);
 //				Date sentDate = sdf.parse(sentAt);
-				long sentTime = cspUIDateFormat.parse(sentAt).getTime()/1000 - offsetInSeconds;
-System.out.println("sendTime="+sentTime);
+//SimpleDateFormat cspUIDateFormat = new SimpleDateFormat("M/D/YYYY H:m:S aa"); //12/5/2017 6:37:06 AM
+				long sentTime = cspUIDateFormat.parse(sentAt).getTime()/1000 + offsetInSeconds;
+System.out.println("sentTime="+sentTime);
 
 				if (sentTime > lastPermissibleSendTime) {
-					Assert.fail("The Notification was sent but the delay in sending was more than permitted.");
+					Assert.fail("The Notification was sent but the delay in sending exceeded the limit.");
 				}
 				return;
 			}
