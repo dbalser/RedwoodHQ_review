@@ -17,8 +17,8 @@ namespace actions.CSP
             var dependencies = ((string)Params["Dependencies"]).Split(',');
             dependencies = dependencies.Contains("None") ? null : dependencies;
             
-            var actionManager = new CSPActionManager();
-            actionManager.AddAction(id, dependencies);
+            //var actionManager = new CSPActionManager();
+            //actionManager.AddAction(id, dependencies);
         }
     }
 }
