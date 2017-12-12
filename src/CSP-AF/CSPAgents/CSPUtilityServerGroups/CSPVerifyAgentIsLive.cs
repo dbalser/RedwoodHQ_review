@@ -16,10 +16,7 @@ namespace actions.CSP.CSPAgents.CSPUtilityServerGroups
         {
             var navigationController = CSPBrowser.Application.WindowController.NavigationController;
             var controller = (CSPUtilityServerGroupsController)navigationController.VisibleViewController;
-            
-            var row = controller.Notebook.AgentsNotebookPage.Table.Rows.First();
-            var guid = row.ValueForColumn(CSPAgentsNotebookPage.GUIDColumnId);
-            controller.VerifyAgentHeartBeatIsLive(guid);
+            controller.VerifyAgentHeartBeatIsLive();
         }
     }
 }
