@@ -9,9 +9,11 @@ import actions.selenium.Browser;
 import org.openqa.selenium.*;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 class WaitUntil{
-    public void run(HashMap<String, Object> params){
+    public String run(HashMap<String, Object> params){
         
 		Calendar c = Calendar.getInstance();
 		String dte1="",dte2="";
@@ -47,6 +49,9 @@ class WaitUntil{
         String newName=name[0]+"@"+dte2;
         
         if(Integer.parseInt(params.get("Offset").toString())<=0){
+            Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
+            Browser.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+             new WebDriverWait(Browser.Driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@data-mgcompnamevalue='runOnOption']/../span")));
             sendNow=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runNowOption']/../span"));
             sendNow.click();
         }
@@ -55,6 +60,14 @@ class WaitUntil{
             nname=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='Name']"));
             nname.clear();
             nname.sendKeys(newName);
+            
+            if(params.get("IsFromScratch").toString().equals("Yes")){
+                Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
+                //try{
+               // 	Thread.sleep(8);	}
+                //catch(Exception e){Assert.fail("Failed in waiting after save");}
+               new WebDriverWait(Browser.Driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@data-mgcompnamevalue='runOnOption']/../span")));
+            }
             
             sendAt=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnOption']/../span"));
             sendAt.click();
@@ -82,7 +95,8 @@ class WaitUntil{
             
             timeZoneDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeZoneName']/../../div[2]"));
             timeZoneDropdown.click();
-                
+             
+            Browser.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             timezone=Browser.Driver.findElement(By.xpath("//td[contains(text(),'"+params.get("RequiredTimeZone").toString()+"')]"));
             timezone.click();
             
@@ -90,39 +104,8 @@ class WaitUntil{
         }
         else
             Assert.fail("Invalid action passed in arguments");
+       
         
-        btnSchedule=Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']"));
-        btnSchedule.click();
-        
-        Browser.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
-        btnYes=Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='YesBtn']"));
-        btnYes.click();
-
-    	btnOk=Browser.Driver.findElement(By.xpath("//span[contains(text(),'OK')]"));
-        btnOk.click();
-        
-        WebElement statusDropdown=null,status=null,search=null,btnSearch=null,row=null;
-        
-        statusDropdown=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='NotificationStatusDropList']/div/div/div[2]"));
-        statusDropdown.click();
-        
-        status=Browser.Driver.findElement(By.xpath("//td[contains(text(),'All')]"));
-        status.click();
-        
-        search=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='SearchEdit']"));
-        search.sendKeys(newName);
-        
-        btnSearch=Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='btnSearch']"));
-        btnSearch.click();
-        
-        try{
-        	row=Browser.Driver.findElement(By.xpath("//div[contains(text(),'"+newName+"')]"));
-        }
-        catch(Exception e)
-        {
-            Assert.fail("Notification name is not found in list");
-        }
-        
-        
+        return newName;
     }
 }

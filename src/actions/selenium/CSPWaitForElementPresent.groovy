@@ -30,10 +30,11 @@ class CSPWaitForElementPresent{
       catch(org.openqa.selenium.WebDriverException err){
           failCount += 1;
         System.out.println("++++>Caught Exception =" + err.message); 
-        if (!(err.message.contains("mg-busy-wait") || //This may overcome refresh issues on mongoose autorefresh screens
+        if ((failCount > 100) &&
+          !(err.message.contains("mg-busy-wait") || //This may overcome refresh issues on mongoose autorefresh screens
      	  err.message.contains("no such session") || //This is the important one to catch
-          err.message.contains("element not visible")) ||
-          (failCount > 100)){
+          err.message.contains("element not visible") ||
+          err.message.contains("stale element reference")) ){
 		    long endTime = System.currentTimeMillis()
             System.out.println("OutTicks=" + (endTime % 100000)/1000 )
             System.out.println("====>Duration ="+ (endTime - startTime)/1000); System.out.println(" ")
