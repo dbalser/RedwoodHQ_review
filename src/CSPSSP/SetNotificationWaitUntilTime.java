@@ -36,12 +36,13 @@ class SetNotificationWaitUntilTime{
         }
 		System.out.println(dte1);
        // dt="2017-11-12$04:05:11";
-        String[]dtime=dte1.split(" ");
+       */
+        String[]dtime=notificationDate.split(" ");
         
         String dte=dtime[0];
         String[]tm=(dtime[1]).split(":");
-        */
-        String[] tm=notificationDate.split(":");
+        
+        
         String hr=tm[0];
         String mn=tm[1];
         
