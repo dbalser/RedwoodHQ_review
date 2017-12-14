@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-class WaitUntil{
+class SetNotificationWaitUntilTime{
     public String run(HashMap<String, Object> params){
         
 		Calendar c = Calendar.getInstance();
@@ -49,11 +49,11 @@ class WaitUntil{
         String newName=name[0]+"@"+dte2;
         
         if(Integer.parseInt(params.get("Offset").toString())<=0){
-            Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
             Browser.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
              new WebDriverWait(Browser.Driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@data-mgcompnamevalue='runOnOption']/../span")));
             sendNow=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runNowOption']/../span"));
             sendNow.click();
+            Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
         }
         else if(Integer.parseInt(params.get("Offset").toString())>0)
         {

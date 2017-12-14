@@ -14,6 +14,7 @@ class ScheduleNotification{
         WebElement btnSchedule=null, btnYes=null, btnOk=null;
         String newName=params.get("NotificationName").toString();
         
+        Browser.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         btnSchedule=Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']"));
         btnSchedule.click();
         
