@@ -36,14 +36,14 @@ class CSPThisTestDependsOn{
             try {
                 lastD = ldd.text
             }
-            catch (Exception e) {}
+            catch (all) {}
             long lastDependencyDate = Long.parseLong(0+lastD)
             
 			def lastE = 0
             try {
                 lastE = led.text
             }
-            catch (Exception e) {}
+            catch (all) {}
 	    	long lastEndDate = Long.parseLong(0+lastE)
 
 			long timeSinceLastDependency = (now - lastDependencyDate )/1000
