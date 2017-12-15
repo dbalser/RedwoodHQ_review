@@ -6,7 +6,7 @@ using CloudSuitePortal.Models;
 using CloudSuitePortal.Services;
 using CloudSuitePortal.Controllers;
 
-namespace actions.CSP.CSPAgents.CSPAgentCommandDetails
+namespace actions.CSP.CSPAgents.CSPAgentDetails
 {
     class CSPVerifyAgentCommunication
     {

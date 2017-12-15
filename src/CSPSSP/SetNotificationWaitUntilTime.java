@@ -22,8 +22,8 @@ class SetNotificationWaitUntilTime{
 		System.out.println(notificationDate);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d-HH:m:s");
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-M-d HH:m:s");
-        
-        try{
+      
+        /*try{
             Date dt=sdf.parse(notificationDate);
             System.out.println(dt);
             c.setTime(dt);
@@ -36,17 +36,19 @@ class SetNotificationWaitUntilTime{
         }
 		System.out.println(dte1);
        // dt="2017-11-12$04:05:11";
-        String[]dtime=dte1.split(" ");
+       */
+        String[]dtime=notificationDate.split(" ");
         
         String dte=dtime[0];
         String[]tm=(dtime[1]).split(":");
+        
         
         String hr=tm[0];
         String mn=tm[1];
         
         WebElement sendNow=null,sendAt=null,date=null,hour=null,min=null,timezone=null,btnSchedule=null,btnYes=null,btnOk=null;
         WebElement hourDropdown=null,minuteDropdown=null,timeZoneDropdown=null,nname=null;
-        String newName=name[0]+"@"+dte2;
+        String newName=params.get("NotificationName").toString();//name[0]+"@"+dte2;
         
         if(Integer.parseInt(params.get("Offset").toString())<=0){
             Browser.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -57,9 +59,9 @@ class SetNotificationWaitUntilTime{
         }
         else if(Integer.parseInt(params.get("Offset").toString())>0)
         {
-            nname=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='Name']"));
-            nname.clear();
-            nname.sendKeys(newName);
+            //nname=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='Name']"));
+            //nname.clear();
+            //nname.sendKeys(newName);
             
             if(params.get("IsFromScratch").toString().equals("Yes")){
                 Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
