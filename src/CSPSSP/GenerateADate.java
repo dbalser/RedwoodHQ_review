@@ -12,7 +12,7 @@ class GenerateADate{
          SimpleDateFormat CreatedDate = new SimpleDateFormat("yyyy-M-d-HH:mm:ss");
 		Calendar c = Calendar.getInstance();
 		c.setTime(new Date()); // Now use today date.
-        c.add(Calendar.MINUTE, Integer.parseInt(params.get("AddSeconds").toString()));
+        c.add(Calendar.SECOND, Integer.parseInt(params.get("AddSeconds").toString()));
 		date = CreatedDate.format(c.getTime());
         }
         else if(params.get("DateType").toString().equals("CurrentHour"))
