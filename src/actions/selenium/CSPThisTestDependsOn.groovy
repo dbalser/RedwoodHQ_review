@@ -32,8 +32,19 @@ class CSPThisTestDependsOn{
             }
 
             long now = System.currentTimeMillis()
-	    	long lastDependencyDate = Long.parseLong("0"+ldd.text)
-	    	long lastEndDate = Long.parseLong("0"+led.text)
+			def lastD = 0
+            try {
+                lastD = ldd.text
+            }
+            catch (all) {}
+            long lastDependencyDate = Long.parseLong(0+lastD)
+            
+			def lastE = 0
+            try {
+                lastE = led.text
+            }
+            catch (all) {}
+	    	long lastEndDate = Long.parseLong(0+lastE)
 
 			long timeSinceLastDependency = (now - lastDependencyDate )/1000
 			long timeSinceLastEnd = (now - lastEndDate )/1000
