@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 class SetNotificationWaitUntilTime{
-    public String run(HashMap<String, Object> params){
+    public void run(HashMap<String, Object> params){
         
 		Calendar c = Calendar.getInstance();
 		String dte1="",dte2="";
@@ -37,28 +37,42 @@ class SetNotificationWaitUntilTime{
 		System.out.println(dte1);
        // dt="2017-11-12$04:05:11";
        */
-        String[]dtime=notificationDate.split(" ");
-        
-        String dte=dtime[0];
-        String[]tm=(dtime[1]).split(":");
         
         
-        String hr=tm[0];
-        String mn=tm[1];
         
         WebElement sendNow=null,sendAt=null,date=null,hour=null,min=null,timezone=null,btnSchedule=null,btnYes=null,btnOk=null;
         WebElement hourDropdown=null,minuteDropdown=null,timeZoneDropdown=null,nname=null;
         String newName=params.get("NotificationName").toString();//name[0]+"@"+dte2;
         
         if(Integer.parseInt(params.get("Offset").toString())<=0){
-            Browser.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
              new WebDriverWait(Browser.Driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@data-mgcompnamevalue='runOnOption']/../span")));
             sendNow=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runNowOption']/../span"));
             sendNow.click();
-            Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
+            //Browser.Driver.findElement(By.xpath("//button[@data-mgcompnamevalue='savebutton']")).click();
         }
         else if(Integer.parseInt(params.get("Offset").toString())>0)
         {
+            Calendar currentdate = Calendar.getInstance();
+        int seconds = Integer.parseInt(params.get("Offset").toString());
+        currentdate.add(Calendar.SECOND, seconds);
+		DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+		TimeZone obj = TimeZone.getTimeZone(params.get("TimeZoneFormat").toString());
+		formatter.setTimeZone(obj);
+        String requiredTime = formatter.format(currentdate.getTime());
+        
+        
+        String[]dtime=requiredTime.split(" ");
+        
+        String dte=dtime[0];
+        String[] time=dte.split("-");
+        String requiredDate = time[1]+"/"+time[0]+"/"+time[2];
+        
+        String[] tm=(dtime[1]).split(":");
+        
+        
+        String hr=tm[0];
+        String mn=tm[1];
+            
             //nname=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='Name']"));
             //nname.clear();
             //nname.sendKeys(newName);
@@ -75,7 +89,7 @@ class SetNotificationWaitUntilTime{
             sendAt.click();
             
             date=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnDate']"));
-            date.sendKeys(dte);
+            date.sendKeys(requiredDate);
             
             hourDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeHr']/../../div[2]"));
             hourDropdown.click();
@@ -98,8 +112,8 @@ class SetNotificationWaitUntilTime{
             timeZoneDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeZoneName']/../../div[2]"));
             timeZoneDropdown.click();
              
-            Browser.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             timezone=Browser.Driver.findElement(By.xpath("//td[contains(text(),'"+params.get("RequiredTimeZone").toString()+"')]"));
+            new WebDriverWait(Browser.Driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[contains(text(),'"+params.get("RequiredTimeZone").toString()+"')]")));
             timezone.click();
             
             
@@ -108,6 +122,5 @@ class SetNotificationWaitUntilTime{
             Assert.fail("Invalid action passed in arguments");
        
         
-        return newName;
     }
 }
