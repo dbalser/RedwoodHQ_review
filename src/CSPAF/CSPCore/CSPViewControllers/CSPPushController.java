@@ -10,11 +10,10 @@ class CSPPushController
 {
     public void run(HashMap<String, Object> params) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException
     {
-        String className = "com.infor.cloudsuite.portal.core.controllers." + params.get("Class Name").toString();
+        String thePackage = "com.infor.cloudsuite.portal." + params.get("Package").toString();
+        String className = thePackage + ".controllers." + params.get("Class").toString();
 
-        Class<?> klass = Class.forName(className);
-		Constructor<?> constructor = klass.getConstructor();
-		CSPViewController controller = (CSPViewController)constructor.newInstance();
+		CSPViewController controller = (CSPViewController)Class.forName(className).newInstance();
         CSPBrowser.getApplication().getWindowController().getNavigationController().push(controller);
     }
 }
