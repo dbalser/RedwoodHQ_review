@@ -9,7 +9,7 @@ import com.infor.cloudsuite.portal.singletenant.agents.controllers.*;
 
 class CSPVerifyAgentIsRunning
 {
-    public void run(HashMap<String, Object> params) throws IOException
+    public void run(HashMap<String, Object> params) throws IOException, InterruptedException
     {
         CSPNavigationController navigationController = CSPBrowser.getApplication().getWindowController().getNavigationController();
         CSPUtilityServerGroupsController controller = (CSPUtilityServerGroupsController)navigationController.getVisibleViewController();

@@ -9,7 +9,7 @@ import com.infor.cloudsuite.portal.singletenant.agents.controllers.*;
 
 class CSPUpdateAgent
 {
-    public void run(HashMap<String, Object> params) throws IOException
+    public void run(HashMap<String, Object> params) throws IOException, InterruptedException
     {
         String version = params.get("Version").toString();
         CSPNavigationController navigationController = CSPBrowser.getApplication().getWindowController().getNavigationController();
