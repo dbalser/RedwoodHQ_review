@@ -19,7 +19,7 @@ class GetTheCurrentRequestActualDetails{
         currentRequestDetails.add(CreatedDate);
         currentRequestDetails.add(ScheduledTime);
         currentRequestDetails.add(Status);
-        if(params.get("Status").toString().equals("Scheduled"))
+        if((params.get("Status").toString()).equals("Scheduled"))
         {
         String Action =  Browser.Driver.findElement(By.xpath(".//table/tbody/tr[1]/td[7]/div/a")).getText();
         currentRequestDetails.add(Action);

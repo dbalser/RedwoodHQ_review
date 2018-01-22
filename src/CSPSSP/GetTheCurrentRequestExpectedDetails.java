@@ -10,11 +10,6 @@ class GetTheCurrentRequestExpectedDetails{
         currentRequestExpectedDetails.add(params.get("CreatedDate").toString());
         currentRequestExpectedDetails.add(params.get("ScheduledTime").toString());
         currentRequestExpectedDetails.add(params.get("Status").toString());
-        
-        if(params.get("Status").toString().equals("SCHEDULED"))
-        {
-        currentRequestExpectedDetails.add(params.get("Action").toString());
-        }
 		
 		return currentRequestExpectedDetails.toArray(new String[0]);
     }
