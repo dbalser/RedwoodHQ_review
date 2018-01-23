@@ -20,7 +20,6 @@ class ResumeSuite
             CSPTenant tenant = new CSPTenant();
         	tenant.hostingGroup = params.get("Hosting group").toString();
         	tenant.applicationFarm = applicationFarms.get(i);
-        	tenant.environmentType = params.get("Environment Type").toString();
         	tenant.dbAPIEndpoint = dbAPIEndpoints.get(i);
         	tenant.tenantAPIEndpoint = tenantAPIEndpoints.get(i);
         	tenant.adminEmails = params.get("Admin Emails").toString();
