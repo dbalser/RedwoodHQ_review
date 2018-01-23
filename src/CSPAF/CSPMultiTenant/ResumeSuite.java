@@ -1,19 +1,15 @@
 package CSPAF.CSPMultiTenant;
 
 import java.util.*;
+
 import com.infor.cloudsuite.portal.core.*;
 import com.infor.cloudsuite.multitenant.controllers.*;
 import com.infor.cloudsuite.multitenant.models.*;
 
-class ProvisionTenant
+class ResumeSuite
 {
     public void run(HashMap<String, Object> params)
-    {   
-        CSPProductSuite productSuite = new CSPProductSuite();
-        productSuite.environmentType = params.get("Environment Type").toString();
-        productSuite.productSuite = params.get("Product Suite").toString();
-        productSuite.productSuiteVersion = params.get("Product Suite Version").toString();
-        
+    {
         List<CSPTenant> tenants = new ArrayList<>();
         List<String> applicationFarms = Arrays.asList(params.get("Application Farms").toString().split(","));
         List<String> dbAPIEndpoints =  Arrays.asList(params.get("DB API Endpoints").toString().split(","));
@@ -32,8 +28,8 @@ class ProvisionTenant
         }
         
         List<String> productNames = Arrays.asList(params.get("Product Names").toString().split(","));
-
-        CSPCustomerController customer=(CSPCustomerController)CSPApplication.getWindowController().getNavigationController().getVisibleViewController();
-        customer.provisionTenant(productSuite, tenants, productNames);
+        
+        CSPSuitesController controller =(CSPSuitesController)CSPApplication.getWindowController().getNavigationController().getVisibleViewController();
+        controller.resumeSuite(tenants, productNames);
     }
 }
