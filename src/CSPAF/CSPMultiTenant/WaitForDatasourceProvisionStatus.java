@@ -1,9 +1,9 @@
 package CSPAF.CSPMultiTenant;
 
 import java.util.*;
+
 import com.infor.cloudsuite.portal.core.*;
-import com.infor.cloudsuite.multitenant.controllers.*;
-import com.infor.cloudsuite.multitenant.models.*;
+import com.infor.cloudsuite.portal.multitenant.environments.controllers.*;
 
 class WaitForDatasourceProvisionStatus
 {
