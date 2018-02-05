@@ -20,7 +20,7 @@ class GDERegister
         registration.phoneNumber = params.get("phoneNumber").toString();
         registration.country = params.get("country").toString();
         
-        CSPGDEAccountRegistrationController controller = new CSPGDEAccountRegistrationController();
+        CSPGDEAuthenticationController controller = new CSPGDEAuthenticationController();
         controller.register(registration);
     }
 }
