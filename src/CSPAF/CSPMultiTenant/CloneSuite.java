@@ -17,6 +17,7 @@ class CloneSuite
 		List<String> applicationFarms = Arrays.asList(params.get("Application Farms").toString().split(","));
         List<String> dbAPIEndpoints =  Arrays.asList(params.get("DB API Endpoints").toString().split(","));
         List<String> tenantAPIEndpoints =  Arrays.asList(params.get("Tenant API Endpoints").toString().split(","));
+        String mingleNotification = params.get("MingleNotificationType").toString();
         String scheduleDate = params.get("ScheduleDate").toString();
         String windowDropdown = params.get("Window").toString();
 
@@ -33,6 +34,6 @@ class CloneSuite
         List<String> productNames = Arrays.asList(params.get("Product Names").toString().split(","));
         
         CSPCloneSuiteController controller =(CSPCloneSuiteController)CSPApplication.getWindowController().getNavigationController().getVisibleViewController();
-        controller.cloneSuite(tenants, productNames,customer,targetTenantType,scheduleDate,windowDropdown);
+        controller.cloneSuite(tenants, productNames,customer,targetTenantType,mingleNotification,scheduleDate,windowDropdown);
     }
 }
