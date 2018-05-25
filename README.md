@@ -1,2 +1,2 @@
 # RedwoodHQ
-A repository for storing RedwoodHQ test automation scripts.
+A repository for storing CloudSuite Portal's (CSP) RedwoodHQ test automation scripts.
