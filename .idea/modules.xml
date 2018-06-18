@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:/../tfs/qa-automation/cloudsuite/CloudSuiteAutomationFramework/CloudSuiteFramework.iml" filepath="C:/../tfs/qa-automation/cloudsuite/CloudSuiteAutomationFramework/CloudSuiteFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../framework/CloudSuitePortal.iml" filepath="$PROJECT_DIR$/../framework/CloudSuitePortal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RedwoodHQ.iml" filepath="$PROJECT_DIR$/RedwoodHQ.iml" />
+    </modules>
+  </component>
+</project>
