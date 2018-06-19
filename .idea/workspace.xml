@@ -6,8 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6e4b22-1e0c-4601-be7b-d7fe98231343" name="Default" comment="commit changes">
-      <change beforePath="" afterPath="$PROJECT_DIR$/CSPBulkTenant.properties" />
+    <list default="true" id="ac6e4b22-1e0c-4601-be7b-d7fe98231343" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/../build/classes/" />
@@ -20,21 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="TestFile.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestFile.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSPBulkTenantController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CSPBulkTenantController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="550">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,8 +34,38 @@
       <file leaf-file-name="CSPBulkTenant.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenant.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSPTenant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/models/CSPTenant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSPSuiteProvisiongWizardController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/suites/controllers/CSPSuiteProvisiongWizardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="133" column="9" lean-forward="false" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSPWizard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/models/CSPWizard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -55,8 +74,8 @@
       <file leaf-file-name="CSPBulkTenantPropertyReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantPropertyReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="354">
+              <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSPTenantProvisioningWizardController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CSPTenantProvisioningWizardController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPTenantProvisioningWizardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="254">
+              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,10 +181,11 @@
         <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantPojo.java" />
         <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/BulkTenant.JSON" />
         <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantJSONReader.java" />
-        <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantController.java" />
+        <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/models/CSPWizard.java" />
         <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenant.properties" />
-        <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantPropertyReader.java" />
         <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPTenantProvisioningWizardController.java" />
+        <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantPropertyReader.java" />
+        <option value="$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantController.java" />
       </list>
     </option>
   </component>
@@ -280,6 +300,41 @@
               <item name="multitenant" type="462c0819:PsiDirectoryNode" />
               <item name="environments" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSP-Automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="infor" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudsuite" type="462c0819:PsiDirectoryNode" />
+              <item name="portal" type="462c0819:PsiDirectoryNode" />
+              <item name="multitenant" type="462c0819:PsiDirectoryNode" />
+              <item name="suites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSP-Automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="infor" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudsuite" type="462c0819:PsiDirectoryNode" />
+              <item name="portal" type="462c0819:PsiDirectoryNode" />
+              <item name="multitenant" type="462c0819:PsiDirectoryNode" />
+              <item name="suites" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSP-Automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="infor" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudsuite" type="462c0819:PsiDirectoryNode" />
+              <item name="portal" type="462c0819:PsiDirectoryNode" />
+              <item name="multitenant" type="462c0819:PsiDirectoryNode" />
+              <item name="suites" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSP-Automation" type="b2602c69:ProjectViewProjectNode" />
@@ -531,11 +586,19 @@
       <option name="project" value="LOCAL" />
       <updated>1529434726303</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit changes">
+      <created>1529435332479</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1529435332479</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -601,40 +664,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestFile.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="56" column="93" lean-forward="false" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantPojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/BulkTenant.JSON">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPTenantProvisioningWizardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2275">
@@ -871,18 +900,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/models/CSPWizard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/suites/controllers/CSPSuitesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1278">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/models/CSPTenant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/suites/controllers/CSPSuiteProvisiongWizardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="133" column="9" lean-forward="false" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPTenantProvisioningWizardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenant.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantPropertyReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="354">
+          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -891,18 +962,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPBulkTenantController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../framework/src/com/infor/cloudsuite/portal/multitenant/environments/controllers/CSPTenantProvisioningWizardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state relative-caret-position="550">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
