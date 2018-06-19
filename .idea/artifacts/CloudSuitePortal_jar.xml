@@ -2,7 +2,7 @@
   <artifact name="CloudSuitePortal:jar">
     <output-path>$PROJECT_DIR$/External Libraries</output-path>
     <root id="root">
-      <element id="archive" name="CloudSuitePortal.jar">
+      <element id="archive" name="csp.jar">
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/../framework/META-INF/MANIFEST.MF" />
         </element>
