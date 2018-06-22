@@ -4,8 +4,9 @@ import redwood.launcher.*
 class CSPSetPassFail{
     public void run(def params){
         def thisTestCase = redwood.launcher.Launcher.globals.get("testcaseName")
-   		def tempDir = System.getenv("TEMP")
-        def basePath = tempDir + "//CSPAutomation"
+//   		def tempDir = System.getenv("TEMP")
+//        def basePath = tempDir + "//CSPAutomation"
+        def basePath = "D:\\Applications\\RedwoodHQ\\Logs" + "//CSPAutomation"
 		def successPath = basePath + '//PASSED//' + thisTestCase
 		def failPath = basePath + '//FAILED//' + thisTestCase
 

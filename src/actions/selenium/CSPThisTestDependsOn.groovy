@@ -12,9 +12,11 @@ class CSPThisTestDependsOn{
             return
         } 
         def thisTestCase = redwood.launcher.Launcher.globals.get("testcaseName")
-        def tempDir = System.getenv("TEMP")
-        def basePath = tempDir + "//CSPAutomation"
-		File ldd = new File(basePath + '//' + 'lastDependencyDate' )
+//   		def tempDir = System.getenv("TEMP")
+//        def basePath = tempDir + "//CSPAutomation"
+        def basePath = "D:\\Applications\\RedwoodHQ\\logs" + "//CSPAutomation"
+
+        File ldd = new File(basePath + '//' + 'lastDependencyDate' )
 		File led = new File(basePath + '//' + 'lastEndDate' )
                 
         while (true) {
