@@ -18,13 +18,12 @@ import com.infor.cloudsuite.portal.multitenant.environments.models.CSPWizard;
 import com.infor.cloudsuite.portal.singletenant.gde.controllers.*;
 
 
-
-
-class CSPBulkTenantProvisioning{
+class CSPBulkTenantLaunch{
     public void run(HashMap<String, Object> params){
        
-        CSPBulkTenantController controller=new CSPBulkTenantController();
+        CSPBulkTenantLaunchController controller=new CSPBulkTenantLaunchController();
         controller.wizardProvisioning(new CSPWizard());
         //"CSPQA-Automation-MTReg-Ming.le-12.0","Regression0614","AX1","CSPQA-Automation-DB-Endpoint","CSPQA-Automation-TP-Endpoint","Pradeep.podishetti@infor.com"
     }
 }
+

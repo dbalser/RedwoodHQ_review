@@ -20,11 +20,12 @@ import com.infor.cloudsuite.portal.singletenant.gde.controllers.*;
 
 
 
-class CSPBulkTenantProvisioning{
+class CSPBulkTenantActivation{
     public void run(HashMap<String, Object> params){
        
-        CSPBulkTenantController controller=new CSPBulkTenantController();
-        controller.wizardProvisioning(new CSPWizard());
+        CSPActivateBulkTenantController controller=new CSPActivateBulkTenantController();
+        controller.activateBulkTenants(new CSPWizard());
         //"CSPQA-Automation-MTReg-Ming.le-12.0","Regression0614","AX1","CSPQA-Automation-DB-Endpoint","CSPQA-Automation-TP-Endpoint","Pradeep.podishetti@infor.com"
     }
 }
+

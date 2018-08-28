@@ -6,7 +6,7 @@ import com.infor.cloudsuite.portal.singletenant.gde.controllers.*;
 
 class CSPGDEProdTypeDeploymentLaunch{
     public void run(HashMap<String, Object> params){
-        String deploymentNameInput = params.get("DeploymentName").toString();
+        String deploymentNameInput = params.get("Deployment").toString();
         String aliasInput = params.get("AliasName").toString();
         String environmentTypeDropdown=params.get("Type").toString();
         String amazonCredentialsDropdown = params.get("AmazonCredentials").toString();

@@ -41,7 +41,7 @@ class SetNotificationWaitUntilTime{
         
         
         WebElement sendNow=null,sendAt=null,date=null,hour=null,min=null,timezone=null,btnSchedule=null,btnYes=null,btnOk=null;
-        WebElement hourDropdown=null,minuteDropdown=null,timeZoneDropdown=null,nname=null;
+        WebElement hourDropdown=null,minuteDropdown=null,timeZoneDropdown=null,nname=null,emailCheckbox=null;
         String newName=params.get("NotificationName").toString();//name[0]+"@"+dte2;
         
         if(Integer.parseInt(params.get("Offset").toString())<=0){
@@ -59,19 +59,28 @@ class SetNotificationWaitUntilTime{
 		TimeZone obj = TimeZone.getTimeZone(params.get("TimeZoneFormat").toString());
 		formatter.setTimeZone(obj);
         String requiredTime = formatter.format(currentdate.getTime());
-        
+                System.out.println("requiredTime"+requiredTime);
+
         
         String[]dtime=requiredTime.split(" ");
+        System.out.println("dtime"+dtime);
+
         
         String dte=dtime[0];
         String[] time=dte.split("-");
         String requiredDate = time[1]+"/"+time[0]+"/"+time[2];
+                            System.out.println("requiredDate"+requiredDate);
+
         
         String[] tm=(dtime[1]).split(":");
         
         
         String hr=tm[0];
+                    System.out.println("hr"+hr);
+
         String mn=tm[1];
+                             System.out.println("mn"+mn);
+   
             
             //nname=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='Name']"));
             //nname.clear();
@@ -91,30 +100,86 @@ class SetNotificationWaitUntilTime{
             date=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnDate']"));
             date.sendKeys(requiredDate);
             
-            hourDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeHr']/../../div[2]"));
-            hourDropdown.click();
+            hourDropdown=Browser.Driver.findElement(By.xpath("//*[@data-mgcompnamevalue='runOnTimeHr']/../../div[2]"));
             try{
-            Thread.sleep(3000);}
+                System.out.println("entered into try");
+            Thread.sleep(3000);
+            hourDropdown.click();
+
+            System.out.println(" finished try");
+}
             catch(Exception e){
                 
                 Assert.fail("Failed in waiting");
             }
             
-            hour=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeHr']//td[contains(text(),'"+hr+"')]"));
-            hour.click();
-            
-            minuteDropdown=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeMin']/div/div/div[2]"));
-            minuteDropdown.click();
-            
+            hour=Browser.Driver.findElement(By.xpath("//*[@data-mgcompname='runOnTimeHr']//td[contains(text(),'"+hr+"')]"));
+             try{
+                System.out.println("entered into try");
+            Thread.sleep(3000);
+            //hour.click();
+
+            System.out.println(" finished try");
+}
+            catch(Exception e){
+                
+                Assert.fail("Failed in waiting");
+            }
+            minuteDropdown=Browser.Driver.findElement(By.xpath("//*[@data-mgcompname='runOnTimeMin']/div/div/div[2]"));
+             try{
+                System.out.println("entered into try");
+            Thread.sleep(3000);
+             minuteDropdown.click();
+
+            System.out.println(" finished try");
+}
+            catch(Exception e){
+                
+                Assert.fail("Failed in waiting");
+            }
             min=Browser.Driver.findElement(By.xpath("//div[@data-mgcompname='runOnTimeMin']//td[contains(text(),'"+mn+"')]"));
+            try{
+                System.out.println("entered into try");
+            Thread.sleep(3000);
             min.click();
+
+            System.out.println(" finished try");
+}
+            catch(Exception e){
+                
+                Assert.fail("Failed in waiting");
+            }
             
             timeZoneDropdown=Browser.Driver.findElement(By.xpath("//input[@data-mgcompnamevalue='runOnTimeZoneName']/../../div[2]"));
+             try{
+                System.out.println("entered into try");
+            Thread.sleep(3000);
             timeZoneDropdown.click();
+
+            System.out.println(" finished try");
+}
+            catch(Exception e){
+                
+                Assert.fail("Failed in waiting");
+            }
              
             timezone=Browser.Driver.findElement(By.xpath("//td[contains(text(),'"+params.get("RequiredTimeZone").toString()+"')]"));
             new WebDriverWait(Browser.Driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[contains(text(),'"+params.get("RequiredTimeZone").toString()+"')]")));
+            try{
+                System.out.println("entered into try");
+            Thread.sleep(3000);
             timezone.click();
+
+            System.out.println(" finished try");
+}
+            catch(Exception e){
+                
+                Assert.fail("Failed in waiting");
+            }
+            
+            
+            //emailCheckbox=Browser.Driver.findElement(By.xpath("//*[@data-mgcompnamevalue='EmailCheckBox']/../span"));
+           // emailCheckbox.click();
             
             
         }
